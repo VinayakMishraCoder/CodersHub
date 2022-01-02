@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".listFragment">
+
+    <ScrollView
+        android:id="@+id/myscroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                app:layout_constraintEnd_toStartOf="@+id/imageButton"
+                app:layout_constraintStart_toStartOf="@id/constr"
+                app:layout_constraintTop_toTopOf="@id/constr" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="91dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/code"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+                app:layout_constraintEnd_toEndOf="@id/constr"
+                app:layout_constraintTop_toTopOf="@id/constr" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="@id/constr"
+                app:layout_constraintEnd_toEndOf="@id/constr"
+                app:layout_constraintStart_toStartOf="@id/constr"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                tools:listitem="@layout/item_view" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
